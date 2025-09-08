@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] ToyStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Toy_Store.styles.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+</head>
+   <body>
+    <!-- Header -->
+    <header>
+        <!-- Thanh trên -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">ToyStore</a>
+                <form class="d-flex ms-auto me-3">
+                    <input class="form-control me-2" type="search" placeholder="Tìm sản phẩm...">
+                    <button class="btn btn-outline-success" type="submit">Tìm</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giỏ hàng 🛒<span class="badge bg-danger">2</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#authModal">Đăng Ký</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Thanh dưới -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-warning shadow-sm">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item mx-5"><a class="nav-link active fw-semibold" href="#">Trang chủ</a></li>
+                        <li class="nav-item mx-5"><a class="nav-link fw-semibold" href="#">Sản phẩm</a></li>
+                        <li class="nav-item mx-5"><a class="nav-link fw-semibold" href="#">Khuyến mãi</a></li>
+                        <li class="nav-item mx-5"><a class="nav-link fw-semibold" href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+     @* landingPage *@
+  <div style="height:610px;">
+          <!-- LEFT -->
+      <div style="height:110px;" class="hero-left">
+        <p class="title">Thế giới đồ chơi – nơi ươm mầm ước mơ tuổi thơ.</p>
+        <p class="subtitle"><strong>Toystory.vn</strong> giới thiệu Chương trình ưu đãi Phí Ship</p>
+
+        <ul class="checklist" aria-hidden="false">
+          <li>
+            <span class="tick" aria-hidden="true">✓</span>
+            <span class="text">ĐƠN HÀNG TỐI THIỂU 150K <strong>HỖ TRỢ TỐI ĐA 15K PHÍ SHIP</strong></span>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">✓</span>
+            <span class="text">GIAO HÀNG TẬN NƠI <small>Thời gian 3-5 ngày</small></span>
+          </li>
+        </ul>
+
+        <div class="buttons" role="group" aria-label="Call to actions">
+          <a class="btn btn-primary" href="#store">Cửa Hàng</a>
+          <a class="btn btn-outline" href="#lego">LEGO BUZZ LIGHTYEAR</a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+     @*  <div class="hero-right">
+        <div class="product-graphic" role="img" aria-label="Mô tả sản phẩm">
+           <img src="../image/Buzz_Lightyear_Render.png" alt="Buzz_Lightyear_Render" style="position:relative; z-index:1; max-width:380px; margin-right:80px;">
+           <!-- Giá/khuyến mãi lớn -->
+           <div class="price-badge">ĐƠN TỪ 150K - TRỢ SHIP 15K</div>
+        </div>
+      </div> *@
+
+
+
+  </div>
+
+
+
+
+    <!-- Nội dung + Sidebar -->
+    <div class="container-fluid flex-grow-1">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 bg-light sidebar py-4 shadow-sm">
+                <h5 class="fw-bold mb-4">Danh mục sản phẩm</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Lego</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Mô hình</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Thú nhồi bông</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="#">Đồ chơi giáo dục</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main -->
+             <main role="main" class="col-md-9 col-lg-10 px-4 py-4" style="min-height: 70vh;">
+                @RenderBody()
+            </main> 
+        </div>
+    </div>
+
+    </header>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*Footer*@
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+  <div class="container text-md-left">
+    <div class="row text-md-left">
+      
+      <!-- Cột 1: Logo + Mô tả -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">ToyStore</h5>
+        <p>
+  ToyStore - Nơi mang đến những món đồ chơi
+  an toàn, sáng tạo và bổ ích cho trẻ em.
+        </p>
+
+      </div>
+      <!-- Cột 2: Liên kết nhanh -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Liên kết</h5>
+        <p><a href="#" class="text-light text-decoration-none">Trang chủ</a></p>
+        <p><a href="#" class="text-light text-decoration-none">Sản phẩm</a></p>
+        <p><a href="#" class="text-light text-decoration-none">Giỏ hàng</a></p>
+        <p><a href="#" class="text-light text-decoration-none">Liên hệ</a></p>
+      </div>
+
+      <!-- Cột 3: Thông tin liên hệ -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Liên hệ</h5>
+        <p><i class="fas fa-home me-2"></i> Hà Nội, Việt Nam</p>
+        <p><i class="fas fa-envelope me-2"></i> contact@toystore.com</p>
+        <p><i class="fas fa-phone me-2"></i> +84 968 370 356</p>
+      </div>
+
+      <!-- Cột 4: Mạng xã hội -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Theo dõi chúng tôi</h5>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+     <hr class="mb-4"> 
+
+    <!-- Dòng bản quyền -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p>© 2025 Bản quyền thuộc về <strong class="text-warning">ToyStore</strong>. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Modal Đăng nhập / Đăng ký -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="authModalLabel">Đăng nhập</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+
+        <!-- Form Đăng nhập -->
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email hoặc Tên đăng nhập</label>
+            <input type="text" class="form-control" id="loginEmail" placeholder="Nhập email hoặc username">
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu">
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+          <p class="mt-3 text-center">
+            Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký ngay</a>
+          </p>
+        </form>
+
+        <!-- Form Đăng ký -->
+        <form id="registerForm" asp-controller="Account" asp-action="Register" method = "post" style="display:none;">
+          <div class="mb-3">
+            <label for="registerName" class="form-label">Tên đăng nhập</label>
+            <input name="UserName" type="text" class="form-control" id="registerName" placeholder="Nhập họ tên">
+          </div>
+          <div class="mb-3"> 
+            <label for="registerEmail" class="form-label">Email</label>
+            <input name = "Email" type="email" class="form-control" id="registerEmail" placeholder="Nhập email">
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Mật khẩu</label>
+            <input name = "Password" type="password" class="form-control" id="registerPassword" placeholder="Nhập mật khẩu">
+          </div>
+          <div class="mb-3">
+            <label for="registerConfirm" class="form-label">Xác nhận mật khẩu</label>
+            <input type="password" class="form-control" id="registerConfirm" placeholder="Nhập lại mật khẩu">
+          </div>
+          <button type="submit" class="btn btn-success w-100">Đăng ký</button>
+          <p class="mt-3 text-center">
+            Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+     document.getElementById("showLogin").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("authModalLabel").innerText = "Đăng nhập";
+  });
+
+  document.getElementById("showRegister").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "block";
+    document.getElementById("authModalLabel").innerText = "Đăng ký";
+  });
+
+
+
+</script>
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
