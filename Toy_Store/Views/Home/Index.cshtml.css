@@ -1,0 +1,57 @@
+﻿
+
+.banner {
+    // background: linear-gradient(135deg, #ffcc66, #ff9933);
+    // color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+    .banner h1 {
+        color: #222;
+    }
+
+    .banner .btn-warning {
+        background-color: #ff9933;
+        border: none;
+        color: #fff;
+    }
+
+        .banner .btn-warning:hover {
+            background-color: #e68a00;
+        }
+
+.sofa-img {
+    max-height: 350px;
+}
+
+.sale-badge {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 25px 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 2px dashed #ff9933;
+}
+
+.IconMedia {
+    display: flex;
+    flex-direction: column;
+}
+
+    .IconMedia i {
+        font-size: 24px;
+        margin: 10px;
+        color: #555;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .IconMedia i:hover {
+            color: #f39c12;
+        }
